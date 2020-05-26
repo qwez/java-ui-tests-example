@@ -10,6 +10,7 @@ public class Application {
     public static void setGoogleUrl(String url) {
         googleUrl = url;
     }
+
     public static void setOpenUrl(String url) {
         openUrl = url;
     }
@@ -25,6 +26,6 @@ public class Application {
         if (url == null) {
             throw new RuntimeException("set base url first");
         }
-        Selenide.open(googleUrl);
+        Selenide.open(url);
     }
 }

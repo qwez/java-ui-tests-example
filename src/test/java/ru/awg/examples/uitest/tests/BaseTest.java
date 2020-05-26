@@ -9,15 +9,15 @@ public abstract class BaseTest {
 
     @BeforeTest
     public void webDriverSetUp() {
-        String driver = Config.properties.getProperty("browser.driver", "");
+        String driver = Config.getValue("browser.driver");
         if (!driver.equals("")) {
             System.setProperty("webdriver.chrome.driver", driver);
         }
-        String res = Config.properties.getProperty("browser.resolution", "");
+        String res = Config.getValue("browser.resolution");
         if (!res.equals("")) {
             Configuration.browserSize = res;
         }
-        Application.setGoogleUrl(Config.properties.getProperty("google.base_url"));
-        Application.setOpenUrl(Config.properties.getProperty("open.base_url"));
+        Application.setGoogleUrl(Config.getValue("google.base_url"));
+        Application.setOpenUrl(Config.getValue("open.base_url"));
     }
 }

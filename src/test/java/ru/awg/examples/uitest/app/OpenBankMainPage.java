@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 public class OpenBankMainPage {
     private OpenBankMainPageBody body;
+
     private OpenBankMainPageBody mainBody() {
         if (body == null) {
             body = new OpenBankMainPageBody();

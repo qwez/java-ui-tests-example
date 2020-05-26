@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GoogleSearchForm extends BaseElement {
-    private final By search = By.cssSelector("input[name=q]");
-    private final By button = By.cssSelector("input[name=btnK]");
+    private final By search     = By.cssSelector("input[name=q]");
+    private final By button     = By.cssSelector("input[name=btnK]");
     private final By resultItem = By.cssSelector("div#search div.g");
 
     public SelenideElement searchInput() {

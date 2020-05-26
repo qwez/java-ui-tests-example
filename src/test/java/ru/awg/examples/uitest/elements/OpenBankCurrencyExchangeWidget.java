@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class OpenBankCurrencyExchangeWidget extends BaseElement {
     private final By row = By.cssSelector("tr.main-page-exchange__row");
 
-    public OpenBankCurrencyExchangeWidget(SelenideElement element) {
+    OpenBankCurrencyExchangeWidget(SelenideElement element) {
         super(element);
     }
 
@@ -22,7 +22,8 @@ public class OpenBankCurrencyExchangeWidget extends BaseElement {
 
     public static class Row extends BaseElement {
         private final By currency = By.cssSelector("span.main-page-exchange__currency-name");
-        private final By rate = By.cssSelector("span.main-page-exchange__rate");
+        private final By rate     = By.cssSelector("span.main-page-exchange__rate");
+
         private Row(SelenideElement element) {
             super(element);
         }

@@ -1,19 +1,18 @@
 package ru.awg.examples.uitest.config;
 
+import lombok.SneakyThrows;
 import ru.awg.examples.uitest.util.PropertiesReader;
-
-import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
+    private static final Properties properties = getProperties();
 
-    public static final Properties properties;
+    @SneakyThrows
+    private static Properties getProperties() {
+        return PropertiesReader.read("config.properties");
+    }
 
-    static {
-        try {
-            properties = PropertiesReader.read("config.properties");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static String getValue(String key) {
+        return properties.getProperty(key, "");
     }
 }
